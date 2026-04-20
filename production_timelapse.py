@@ -24,9 +24,9 @@ class ProductionTimelapse:
         self.thumbnail_base_dir = Path(config.get('thumbnail_base_dir', './timelapses/thumbnails'))
 
         # Создаём директории для конкретного принтера
-        self.frames_dir = self.frames_base_dir / printer_id
-        self.video_dir = self.video_base_dir / printer_id
-        self.thumbnail_dir = self.thumbnail_base_dir / printer_id
+        self.frames_dir = self.frames_base_dir
+        self.video_dir = self.video_base_dir
+        self.thumbnail_dir = self.thumbnail_base_dir
 
         self.frames_dir.mkdir(parents=True, exist_ok=True)
         self.video_dir.mkdir(parents=True, exist_ok=True)
@@ -197,7 +197,7 @@ class ProductionTimelapse:
             # Создаём превью из последнего кадра
             frame_files = sorted(self.current_print['frames_dir'].glob("frame_*.jpg"))
             if frame_files:
-                last_frame = frame_files[-3]  # Берём не последний кадр (3 с конца)
+                last_frame = frame_files[-3]  # Берём последний кадр
                 await self.create_thumbnail_from_frame(
                     last_frame,
                     self.current_print['thumbnail_path']
