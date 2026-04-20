@@ -197,7 +197,7 @@ class ProductionTimelapse:
             # Создаём превью из последнего кадра
             frame_files = sorted(self.current_print['frames_dir'].glob("frame_*.jpg"))
             if frame_files:
-                last_frame = frame_files[-1]  # Берём последний кадр
+                last_frame = frame_files[-3]  # Берём последний кадр
                 await self.create_thumbnail_from_frame(
                     last_frame,
                     self.current_print['thumbnail_path']
