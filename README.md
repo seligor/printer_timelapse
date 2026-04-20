@@ -103,3 +103,29 @@ screen -r timelapse
 # Завершение screen сессии (внутри сессии)
 exit
 ```
+
+
+## Альтернативный запуск через systemd:
+
+/etc/systemd/system/timelapse.service:
+
+```bash
+[Unit]
+Description=3D Printer Timelapse Service
+After=network.target
+
+[Service]
+Type=simple
+User=seligor
+WorkingDirectory=/home/seligor/timelapse-program
+ExecStart=/home/seligor/timelapse-program/venv/bin/python /home/seligor/timelapse-program/production_timelapse.py
+Restart=always
+RestartSec=10
+StandardOutput=append:/home/seligor/timelapse-program/timelapse.log
+StandardError=append:/home/seligor/timelapse-program/timelapse_error.log
+
+[Install]
+WantedBy=multi-user.target
+```
+
+Не забудьте исправить пути на свои. у меня запуск из домашней директории пользователя
