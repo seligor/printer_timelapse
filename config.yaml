@@ -1,0 +1,28 @@
+printers:
+  printer_1:
+    ip: 192.168.10.177
+    capture_interval: 5          # секунд между кадрами
+    frames_per_second: 10         # FPS в итоговом видео
+    max_retries: 3               # попыток сделать снимок
+    delete_frames_after_render: true  # удалять кадры после сборки видео
+
+    # Директории для хранения (относительные или абсолютные пути)
+    frames_base_dir: /home/seligor/timelapse-data/frames
+    video_base_dir: /home/seligor/timelapse-data/videos
+    thumbnail_base_dir: /home/seligor/timelapse-data/thumbnails
+
+  printer_2:
+    ip: 192.168.10.179
+    capture_interval: 5
+    frames_per_second: 10
+    max_retries: 3
+    delete_frames_after_render: true
+    frames_base_dir: /home/seligor/timelapse-data/frames
+    video_base_dir: /home/seligor/timelapse-data/videos
+    thumbnail_base_dir: /home/seligor/timelapse-data/thumbnails
+
+# Глобальные настройки
+logging:
+  level: INFO
+  max_size_mb: 100
+  backup_count: 5
