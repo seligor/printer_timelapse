@@ -26,6 +26,8 @@
   - Python 3.7+
   - FFmpeg (для сборки видео)
   - Moonraker API (доступен через Zmod)
+  - ffmpeg (для сборки видео)
+- **Для веб интерфейса потребуется web server(apache2, nginx) с поддержкой php**
 
 ## Установка
 
@@ -129,5 +131,8 @@ StandardError=append:/home/seligor/timelapse-program/timelapse_error.log
 [Install]
 WantedBy=multi-user.target
 ```
+
+
+Добавил веб часть. Для её работы на вашем сервере потребуется web сервер м поддержкой php
 
 Не забудьте исправить пути на свои. у меня запуск из домашней директории пользователя
