@@ -15,6 +15,26 @@
 - 🔄 **Автоматическое восстановление** — переподключается при ошибках
 
 
+
+## Режимы работы
+
+### 1. Обычный режим (по умолчанию)
+```yaml
+detect_first_layer: false
+layer_mode: false
+```
+### 2. "умный старт"(потребуется добавление настроек в слайсер)
+```
+detect_first_layer: true
+layer_mode: true
+```
+
+<img width="482" height="468" alt="image" src="https://github.com/user-attachments/assets/2fb12f61-6641-406a-949f-a4a17d0498d5" />
+
+SET_PRINT_STATS_INFO CURRENT_LAYER={layer_num}
+SET_PRINT_STATS_INFO TOTAL_LAYER={total_layer_count}
+
+
 ## Требования
 
 - **Оборудование:**
