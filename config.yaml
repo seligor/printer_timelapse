@@ -7,9 +7,9 @@ printers:
     delete_frames_after_render: true  # удалять кадры после сборки видео
 
     # Директории для хранения (относительные или абсолютные пути)
-    frames_base_dir: /home/seligor/timelapse-data/frames
-    video_base_dir: /home/seligor/timelapse-data/videos
-    thumbnail_base_dir: /home/seligor/timelapse-data/thumbnails
+    frames_base_dir: /home/seligor/timelapse-program/frames
+    video_base_dir: /var/www/html/web-timelapse/2/timelapse/printer_1
+    thumbnail_base_dir: /var/www/html/web-timelapse/2/timelapse/printer_1
 
   printer_2:
     ip: 192.168.10.179
@@ -17,9 +17,14 @@ printers:
     frames_per_second: 10
     max_retries: 3
     delete_frames_after_render: true
-    frames_base_dir: /home/seligor/timelapse-data/frames
-    video_base_dir: /home/seligor/timelapse-data/videos
-    thumbnail_base_dir: /home/seligor/timelapse-data/thumbnails
+    frames_base_dir: /home/seligor/timelapse-program/frames
+    video_base_dir: /var/www/html/web-timelapse/2/timelapse/printer_2
+    thumbnail_base_dir: /var/www/html/web-timelapse/2/timelapse/printer_2
+
+    detect_first_layer: false # переключите на true если хотите включить запись по фактическому началу печати
+    layer_mode: false # переключите на true если хотите делать скриншот только при смене слоя
+    min_layer_interval: 2
+    max_wait_for_first_layer: 600
 
 # Глобальные настройки
 logging:
