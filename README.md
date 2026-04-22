@@ -24,7 +24,7 @@ detect_first_layer: false
 layer_mode: false
 ```
 ### 2. "умный старт"(потребуется добавление настроек в слайсер)
-```
+```yaml
 detect_first_layer: true
 layer_mode: true
 ```
